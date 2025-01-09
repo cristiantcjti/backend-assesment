@@ -1,0 +1,12 @@
+.git
+Dockerfile
+etc/*
+README.md
+.coverage
+.reports/
+.idea/
+.python-version
+.bash_history
+.vscode/
+__pycache__/*
+__pycache__/

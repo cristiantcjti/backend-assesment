@@ -1,0 +1,29 @@
+services:
+
+  backend_assesment_database:
+    image: postgres:14.5-alpine
+    container_name: backend_assesment_database
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASS}
+      POSTGRES_DB: ${DATABASE_SCHEMA}
+
+  backend_assesment_app: &app
+    image: backend_assesment
+    build: .
+    container_name: backend_assesment_app
+    hostname: backend_assesment-app
+    volumes:
+      - ./:/app
+    ports:
+      - 8000:80
+    healthcheck:
+      test: curl -f http://localhost/health-check/?format=json || exit 1
+      interval: 1s
+      timeout: 1s
+      retries: 30
+    depends_on:
+      - backend_assesment_database
+

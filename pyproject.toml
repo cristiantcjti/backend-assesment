@@ -1,0 +1,91 @@
+[tool.bandit]
+exclude_dirs = ["tests",]
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+
+[tool.coverage.run]
+omit = [
+  "*__init__.py",
+  "*conftest.py",
+  "*apps.py",
+  "*tests/*",
+  "*config/*",
+  "*migrations/*",
+  "etc/*",
+  "src/config/*",
+  "src/gunicorn_conf.py",
+  "src/integration/migrations/*",
+  "src/topigs/migrations/*",
+  "src/xray/migrations/*",
+  "manage.py",
+]
+
+[tool.coverage.html]
+directory = "reports/coverage"
+
+[tool.flake8]
+ignore = ["E203", "E501", "W503"]
+max-line-length = 120
+exclude = ["*migrations"]
+
+[tool.isort]
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+default_section = "THIRDPARTY"
+profile = "black"
+
+[tool.poetry]
+package-mode = false
+name = "aex-server"
+version = "1.0.0"
+description = ""
+authors = ["Cristian"]
+readme = "README.md"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "src.config.test_settings"
+testpaths = ["src"]
+python_functions = "test_*"
+python_files = "test_*.py"
+addopts = "--nomigrations -p no:warnings --cov=. --cov-report=html"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "==4.2.4"
+python-decouple = "==3.6"
+psycopg2-binary = { version = "^2.9.5", allow-prereleases = true, extras = ["no-binary"] }
+django-ninja = "^1.1.0"
+uvicorn = "==0.20.0"
+gunicorn = "==21.2.0"
+kombu = "==5.3.4"
+celery = "==5.3.6"
+python-json-logger = "==2.0.4"
+pydantic = "^2.6.4"
+flower = "2.0.1"
+django-health-check = "3.18.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "22.10.0"
+isort = "5.10.1"
+flake8 = "5.0.4"
+bandit = "1.7.4"
+pytest = "==7.1.3"
+pytest-django = "==4.5.2"
+pytest-cov = "==4.0.0"
+pytest-freezegun = "==0.4.2"
+requests-mock = "==1.10.0"
+pytest-mock = "==3.10.0"
+mixer = "==7.2.2"
+pre-commit = "==3.1.1"
+flake8-pyproject = "^1.2.3"
+toml = "^0.10.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
