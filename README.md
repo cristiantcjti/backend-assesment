@@ -1,5 +1,5 @@
 
-# BACKEND ASSESMENT
+# BACKEND ASSESSMENT
 
 <p align="center">
   <img alt="Python 12.6.6" src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" />
@@ -46,11 +46,11 @@ To offer a secure and sustainable service that enables management to the project
 - **Integration** > **Availability** > **Security** > **Usability**
 
 #### Key Application Components:
-- Service: `backend-assesment`.
-- Database: `backend-assesment-database`.
+- Service: `backend-assessment`.
+- Database: `backend-assessment-database`.
 
 #### Component Relationships:
-The `backend-assesment` service (API) provides BACKs management endpoints and interacts with the `backend-assesment-database` database to perform REST actions:
+The `backend-assessment` service (API) provides BACKs management endpoints and interacts with the `backend-assessment-database` database to perform REST actions:
 - Create
 - Read
 - Update
@@ -76,7 +76,7 @@ The `backend-assesment` service (API) provides BACKs management endpoints and in
 ### Project Structure
 
 ```plaintext
-backend-assesment/
+backend-assessment/
 ├── etc/
 ├── src/
 ├── .dockerignore
@@ -125,7 +125,7 @@ Examples:
 
 ## Database
 
-The primary database for the `backend-assesment` service is relational, using MSSQL Server as the DBMS.
+The primary database for the `backend-assessment` service is relational, using MSSQL Server as the DBMS.
 
 ### Django ORM
 
@@ -146,7 +146,7 @@ For more information, we can refer to the official Django Migrations documentati
 ---
 ## Coverage
 
-Excellence is a priority in the `backend-assesment` development process. For this reason, a high standard for test coverage is maintained. The project's acceptance threshold is **80%**, but the goal is always as close to **100%** as possible. The more meaningful the tests, the lower the risk of future issues.
+Excellence is a priority in the `backend-assessment` development process. For this reason, a high standard for test coverage is maintained. The project's acceptance threshold is **80%**, but the goal is always as close to **100%** as possible. The more meaningful the tests, the lower the risk of future issues.
 
 ---
 

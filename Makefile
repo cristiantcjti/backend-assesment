@@ -1,6 +1,6 @@
-PROJECT_NAME := backend_assesment_app
+PROJECT_NAME := backend_assessment_app
 PYTHON_VERSION := 3.12.0
-VENV_NAME := backend_assesment-$(PYTHON_VERSION)
+VENV_NAME := backend_assessment-$(PYTHON_VERSION)
 
 include .env
 export

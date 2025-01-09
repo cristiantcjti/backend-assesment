@@ -1,8 +1,8 @@
 services:
 
-  backend_assesment_database:
+  backend_assessment_database:
     image: postgres:14.5-alpine
-    container_name: backend_assesment_database
+    container_name: backend_assessment_database
     ports:
       - 5432:5432
     environment:
@@ -10,11 +10,11 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASS}
       POSTGRES_DB: ${DATABASE_SCHEMA}
 
-  backend_assesment_app: &app
-    image: backend_assesment
+  backend_assessment_app: &app
+    image: backend_assessment
     build: .
-    container_name: backend_assesment_app
-    hostname: backend_assesment-app
+    container_name: backend_assessment_app
+    hostname: backend_assessment-app
     volumes:
       - ./:/app
     ports:
@@ -25,5 +25,5 @@ services:
       timeout: 1s
       retries: 30
     depends_on:
-      - backend_assesment_database
+      - backend_assessment_database
 

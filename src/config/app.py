@@ -12,7 +12,7 @@ from src.core.controllers.account import account_router
 Exc = Union[Exception, Type[Exception]]
 
 
-class AssesmentNinjaAPI(NinjaAPI):
+class AssessmentNinjaAPI(NinjaAPI):
     def on_exception(self, request: HttpRequest, exc: Exc) -> HttpResponse:
         errors = []
         status = 400
@@ -29,10 +29,10 @@ class AssesmentNinjaAPI(NinjaAPI):
         )
 
 
-api_v1 = AssesmentNinjaAPI(
+api_v1 = AssessmentNinjaAPI(
     version="1.0.0",
-    description="Assesment Project.",
-    title="Assesment Project",
+    description="Assessment Project.",
+    title="Assessment Project",
 )
 
 

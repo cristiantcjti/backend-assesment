@@ -1,6 +1,6 @@
 FROM python:3.12.0-slim
 
-ARG APP_USER=backend_assesment
+ARG APP_USER=backend_assessment
 
 ARG APP_HOME=/app
 
